@@ -16,3 +16,9 @@ dt$Date <- as.Date(dt$Date, format="%d/%m/%Y")
 timeStamp <- paste(dt$Date, dt$Time)
 dt$Time <- strptime(timeStamp, format = "%Y-%m-%d %H:%M:%S")
 
+#clean up temp variable
+rm(timeStamp)
+
+#create data frame for project 1
+proj1_df <- subset(dt, Date == "2007-02-01" | Date == "2007-02-02")
+
